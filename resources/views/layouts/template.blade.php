@@ -36,17 +36,17 @@
         </header>
 
         <div class="nav-scroller py-1 mb-2">
-            <nav class="nav d-flex justify-content-between">
-                <a class="p-2 link-secondary" href="#">Education</a>
-                <a class="p-2 link-secondary" href="#">Books We Love</a>
-                <a class="p-2 link-secondary" href="#">Classic Books</a>
-                <a class="p-2 link-secondary" href="#">Romance</a>
-                <a class="p-2 link-secondary" href="#">Kids</a>
-                <a class="p-2 link-secondary" href="#">Thrillers</a>
-                <a class="p-2 link-secondary" href="#">TextBooks</a>
-                <a class="p-2 link-secondary" href="#">Authors Alliance & MIT Press</a>
-            </nav>
-        </div>
+            <select>
+                <option value="uncategorized">Uncategorized</option>
+                <option value="sci-fi">Science Fiction</option>
+                <option value="novel">Novel</option>
+                <option value="history">History</option>
+                <option value="biography">Biography</option>
+                <option value="romance">Romance</option>
+                <option value="education">Education</option>
+                <option value="culinary">Culinary</option>
+                <option value="comic">Comic</option>
+              </select>
     </div>
 
     <main class="container">

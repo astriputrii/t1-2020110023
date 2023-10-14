@@ -77,7 +77,12 @@
                 </p>
             </div>
         @endforeach
-        <h1>FAQs</h1>
+    </div>
+    </div>
+    </div>
+    @endswitch
+    @endif
+    <h1>FAQs</h1>
     <div class="accordion my-4" id="accordionContoh">
         @forelse ($faqs as $faq)
             <div class="accordion-item">
@@ -100,9 +105,4 @@
             </div>
         @endforelse
     </div>
-    </div>
-    </div>
-    </div>
-    @endswitch
-    @endif
 @endsection
