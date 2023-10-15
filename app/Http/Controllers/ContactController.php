@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
-use App\Models\book;
+
 
 class ContactController extends Controller
 
@@ -12,20 +13,29 @@ class ContactController extends Controller
     {
         return view('contact');
     }
-    public function store(Request $request) {
+
+    public function store(Request $request)
+    {
         $validated = $request->validate([
-            'ISBN' => 'required|string|min:3|max:255',
-            'Judul' => 'required|string|email',
-            'Halaman' => 'required|numeric|digits_between:5,15',
+           'full_name' => 'required|string|min:3|max:255',
+            'email' => 'required|string|email',
+            'phone_number' => 'required|numeric|digits_between:5,15',
         ]);
-        $book = new Book();
-        $book->ISBN = $validated['ISBN'];
-        $book->Judul = $validated['Judul'];
-        $book->Halaman = $validated['Halaman'];
-        $book->Kategori = $validated['Kategori'];
-        $book->Penerbit = $validated['Penerbit'];
-        $book->save();
+
+        //$contact = new Contact();
+        //$contact->full_name = $validated['full_name'];
+        //$contact->email = $validated['email'];
+        //$contact->phone_number = $validated['phone_number'];
+        //$contact->save();
+        $contact = Contact::create($validated);
+        $contact = Contact::create([
+            'full_name' => $validated['full_name'],
+            'email' => $validated['email'],
+            'phone_number' => $validated['phone_number'],
+        ]);
 
         return redirect('/contact-us')->with('success', 'Thank you, we will contact you soon!');
     }
+
 }
+

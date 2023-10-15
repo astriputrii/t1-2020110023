@@ -30,6 +30,9 @@ Route::get('/contact-us', [ContactController::class, 'index']);
 
 Route::post('/contact-us', [ContactController::class, 'store']);
 
+Route::get('/contact-us', [ContactController::class, 'index'])->name('contact-us.index');
+Route::post('/contact-us', [ContactController::class, 'store'])->name('contact-us.store');
+
 Route::get('/about', function () {
         $title = 'About Us';
         $description = 'Welcome to Open Library.';
