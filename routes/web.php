@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,8 @@ Route::post('/contact-us', [ContactController::class, 'store']);
 
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact-us.index');
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact-us.store');
+
+Route::resource('articles', ArticleController::class);
 
 Route::get('/about', function () {
         $title = 'About Us';
